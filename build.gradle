@@ -1,0 +1,37 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.booster_version = '0.26.0'
+
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/public' }
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+
+        classpath "com.didiglobal.booster:booster-gradle-plugin:$booster_version"
+
+        /**Package Size**/
+//        booster-task-compression - 资源压缩
+        classpath "com.didiglobal.booster:booster-task-compression:$booster_version"
+
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/public' }
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
